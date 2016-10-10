@@ -20,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
     private ImageView imageView;
     private String nameString, userString, passwordString,
             pathImageString, nameImageString;
+    private boolean aBoolean = true;
 
 
     @Override
@@ -55,6 +56,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if ((requestCode == 0) && (resultCode == RESULT_OK)) {
+
+            aBoolean = false;
 
             Log.d("10octV1", "Choose Success");
 
@@ -117,6 +120,16 @@ public class SignUpActivity extends AppCompatActivity {
             MyAlert myAlert = new MyAlert(SignUpActivity.this, R.drawable.doremon48,
                     "มีช่องว่าง", "กรุณากรอก ทุกช่องด้วย คะ");
             myAlert.myDialog();
+        } else if (aBoolean) {
+            //Non Choose Image
+            MyAlert myAlert = new MyAlert(SignUpActivity.this, R.drawable.bird48,
+                    "ยังไม่ได้เลือกรูป", "กรุณาเลือกรูปภาพ ด้วยคะ");
+            myAlert.myDialog();
+
+        } else {
+            // Everything OK
+
+
         }
 
 
