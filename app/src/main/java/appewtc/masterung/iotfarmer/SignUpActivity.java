@@ -19,7 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText nameEditText, userEditText, passwordEditText;
     private ImageView imageView;
     private String nameString, userString, passwordString,
-            pathImageString;
+            pathImageString, nameImageString;
 
 
     @Override
@@ -77,6 +77,11 @@ public class SignUpActivity extends AppCompatActivity {
 
 
         }   // if
+
+
+        //Find Name of Image Choose
+        nameImageString = pathImageString.substring(pathImageString.lastIndexOf("/"));
+        Log.d("10octV1", "nameImageString ==> " + nameImageString);
 
     }   // onActivityResult
 
