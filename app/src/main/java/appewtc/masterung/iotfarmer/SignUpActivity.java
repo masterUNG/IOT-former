@@ -2,6 +2,8 @@ package appewtc.masterung.iotfarmer;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -60,6 +62,19 @@ public class SignUpActivity extends AppCompatActivity {
             Uri uri = data.getData();
             pathImageString = myFindPath(uri);
             Log.d("10octV1", "pathImageString ==> " + pathImageString);
+
+            //Setup Image Choose to ImageView
+            try {
+
+                Bitmap bitmap = BitmapFactory
+                        .decodeStream(getContentResolver()
+                                .openInputStream(uri));
+                imageView.setImageBitmap(bitmap);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
 
         }   // if
 
