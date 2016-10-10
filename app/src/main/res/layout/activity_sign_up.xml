@@ -26,6 +26,7 @@
         android:text="@string/singup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickSignUpSign"
         android:id="@+id/button3"
         android:layout_alignParentBottom="true" />
 
